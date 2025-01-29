@@ -1,0 +1,21 @@
+```scala
+class MyClass(val value: Int) {
+  def add(other: MyClass): MyClass = {
+    new MyClass(this.value + other.value)
+  }
+
+  def addInt(other: Int): MyClass = {
+    new MyClass(this.value + other)
+  }
+}
+
+object Main extends App {
+  val obj1 = new MyClass(10)
+  val obj2 = new MyClass(5)
+  val obj3 = obj1.add(obj2)
+  println(obj3.value) // Output: 15
+
+  val obj4 = obj1.addInt(20)  //Now this compiles correctly
+  println(obj4.value) // Output: 30
+}
+```
